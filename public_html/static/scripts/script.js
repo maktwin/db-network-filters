@@ -48,7 +48,7 @@ $(document).ready(function(){
 
     $('.update_filter').click(function() {
         var btn = $(this);
-        var filter = {}, base = {}, AFC = {};
+        var filter = {}, base = {};
 
         $(".table-filter .base").each(function() {
             base[this.name] = $(this).val();
@@ -62,6 +62,30 @@ $(document).ready(function(){
         $.ajax({
             type: 'PUT',
             url: 'filters', 
+            data: JSON.stringify(filter),
+            dataType: 'json',
+        }).always(function () {
+            var libnotify = humane.create({timeout: 1000, baseCls: 'humane-libnotify', addnCls: 'humane-libnotify-success'});
+            libnotify.log('Filter was successfully updated', function() { window.location.reload(); });
+        }, 'json');
+    });
+
+    $('.update_AFC').click(function() {
+        var btn = $(this);
+        var filter = {}, AFC = {};
+
+        $(".block_AFC .AFC").each(function() {
+            AFC[this.name] = $(this).val();
+        });
+
+        var block = btn.closest('.block_AFC');
+        var AFCID = block.find('.update-AFCID').val();
+
+        filter['AFC'] = AFC;
+        filter['AFCID'] = AFCID;
+        $.ajax({
+            type: 'PUT',
+            url: 'AFC', 
             data: JSON.stringify(filter),
             dataType: 'json',
         }).always(function () {

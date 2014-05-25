@@ -15,7 +15,7 @@ class Chart {
 		$myData->addPoints(array_values($AFC), 'dB');
 		$myData->addPoints(array_keys($AFC), 'Hz');
 
-		$myData->setAxisName('dB');
+		$myData->setAxisName(0, 'dB');
 		$myData->setAbscissa('Hz');
 
 		$myPicture = new pImage(1200, 800, $myData);

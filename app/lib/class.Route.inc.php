@@ -11,7 +11,9 @@ class Route {
 		$data = file_get_contents("php://input");
 		$param = isset($controller[2]) ? $controller[2] : null;
 
-		if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+		if ($_SERVER['REQUEST_METHOD'] == 'GET' && !$param) {
+			$obj->index();
+		} else if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 			$obj->show($param);
 		}
 		if ($_SERVER['REQUEST_METHOD'] == 'POST') {

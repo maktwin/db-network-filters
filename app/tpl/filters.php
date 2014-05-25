@@ -45,11 +45,11 @@
                     <tr>
                         <input type="hidden" type="text" class="delete-filterID" value="<?=$filter['ID']?>"/>
 
-                        <td class="settings_field"><input class="input-small base" type="text" name="name" value="<?=$filter['name']?>"/></td>
-                        <td class="settings_field"><input class="input-small base" type="text" name="vendor" value="<?=$filter['vendor'];?>"/></td>
-                        <td class="settings_field"><input class="input-small base" type="text" name="type" value="<?=$filter['type']?>"/></td>
-                        <td class="settings_field"><input class="input-small base" type="text" name="mA" value="<?=$filter['mA']?>"/></td>
-                        <td class="settings_field"><input class="input-small base" type="text" name="mV" value="<?=$filter['mV']?>"/></td>
+                        <td><input class="input-small base" type="text" name="name" value="<?=$filter['name']?>"/></td>
+                        <td><input class="input-small base" type="text" name="vendor" value="<?=$filter['vendor'];?>"/></td>
+                        <td><input class="input-small base" type="text" name="type" value="<?=$filter['type']?>"/></td>
+                        <td><input class="input-small base" type="text" name="mA" value="<?=$filter['mA']?>"/></td>
+                        <td><input class="input-small base" type="text" name="mV" value="<?=$filter['mV']?>"/></td>
                         <td>
                             <button class="btn update_filter">Update</button>
                             <button class="btn delete_filter">Delete</button>

@@ -5,7 +5,7 @@ include_once implode(DIRECTORY_SEPARATOR, array(__DIR__, '..', 'chartAFC.php'));
 
 class Filters extends View {
 
-	public function show() {
+	public function index() {
 		$filters = FiltersQuery::getInstance()->findAll();
 
 		$this->set('filters', $filters);

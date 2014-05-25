@@ -28,6 +28,26 @@ class AFCQuery extends BaseQuery {
 		return $result;
 	}
 
+	static public function update($AFC, $AFCID) {
+		$db = self::$instance->connectDB->db;
+
+		$fields = array_keys($AFC);
+		$values = array_values($AFC);
+		array_push($values, $AFCID);
+
+		$fieldlist   = implode("`= ?,`", $fields);
+		$placeholder = str_repeat("?,", count($fields)-1);
+
+		$sql = "UPDATE AFC SET `$fieldlist` = ? WHERE ID = ?";
+
+		try {
+			$prepare = $db->prepare($sql);
+			$prepare->execute($values);
+		} catch (PDOException $e) {
+		    file_put_contents("php://stderr", print_r("Error: " . $e->getMessage() . "\n", true));
+		}
+	}
+
 }
 
 ?>
