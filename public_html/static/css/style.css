@@ -1,0 +1,19 @@
+.main {
+	margin: 40px;
+}
+.AFC {
+	width: 50px !important;
+}
+.base {
+	width: 105px !important;
+}
+
+.body-container{margin-bottom: 35px;}
+body {font-size: 12px !important;}
+table {font-size: 12px !important;}
+thead {background-color:#eeeeee;}
+th {width: 140px;}
+.btn {font-size:12px !important; line-height:14px !important;}
+.all_filters { cursor: pointer; }
+.block_link { margin: 20 0 -10 0; }
+.link_AFC { text-align: center; }
